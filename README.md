@@ -1,19 +1,19 @@
 # scrap-yard
 A simple Typescript project
 
-## Environment Setup:
+### Environment Setup:
 
-### Installation
+#### Installation
 1. setup Typescript.
 ```
 npm install -g typescript ts-node
 ```
-### verify
+#### verify
 ```
 tsc --help
 ```
 
-## First App
+### First App
 Generate package.json file:
 ```
 npm init -y
@@ -21,4 +21,19 @@ npm init -y
 Install Axios
 ```
 npm install axios
+```
+
+#### Compile & Run Typescript code:
+
+compile:
+```
+tsc index.ts
+```
+run:
+```
+node index.js
+```
+compile & run:
+```
+ts-node index.ts
 ```
