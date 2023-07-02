@@ -1,15 +1,19 @@
-# TypsScript101
+# TypsScript 101
+Types = Shortcuts or Labels that describe the different properties + functions that an object/value has in JS, every single object/value has a type.
+##### examples of types
+```
+# primitive types
+const today = new Date();
+today.getMonth();
 
-Types = Shortcuts or Labels that describe the different properties + functions that an object/value has in JS,
-every single object/value has a type.
+# object types
+const person = {
+    age: 20
+};
 
-#### Properties + Methods a 'string' has in JS:
-
-- charAt()
-- charCodeAt()
-- concat()
-- indexOf()
-
+class Color {}
+const red = new Color();
+```
 ##### usecase:
 
 ```
@@ -31,3 +35,4 @@ axios.get(url).then(response => {
 });
 
 ```
+
