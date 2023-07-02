@@ -44,7 +44,7 @@ axios.get(url).then(response => {
 
 ### Type Annotations and Inference
 
-##### type annotations
+#### type annotations
 
 ```
 // type annotations with variables
@@ -76,20 +76,77 @@ let point: { x: number; y: number } = {
 const logNumber: (i: number) => void = (i: number) => {
     console.log(i);
 };
+```
+##### when to use annotations
 
-
-// when to use annotations
-// 1) A function returns the 'any' type
-
+* When a function returns the 'any' type
+```
 const json = '{"x": 10, "y": 20}';
 const coordinates = JSON.parse(json); //JSON.parse() function returns any
 console.log(coordinates);
+
+// solution:
+const json = '{"x": 10, "y": 20}';
+const coordinates: { x: number, y: number } = JSON.parse(json);
+console.log(coordinates);
+```
+* When we declare a variable on one line and initialize it later
+```
+let words = ['red', 'green', 'blue'];
+let foundWord;
+
+for (let i = 0; i < words.length; i++) {
+    if (words[i] === 'green') {
+        foundWord = true;
+    }
+}
+
+// solution using type annotation:
+let words = ['red', 'green', 'blue'];
+let foundWord: boolean;
+
+for (let i = 0; i < words.length; i++) {
+    if (words[i] === 'green') {
+        foundWord = true;
+    }
+}
+
+// solution 2:
+let words = ['red', 'green', 'blue'];
+let foundWord = false;
+
+for (let i = 0; i < words.length; i++) {
+    if (words[i] === 'green') {
+        foundWord = true;
+    }
+}
+```
+* Variables whose type cannot be inferred correctly
+```
+let numbers = [-10, -1, 12];
+let numberAboveZero = false;
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i]) > 0) {
+        numberAboveZero = numbers[i];
+    }
+}
+
+// solution
+let numbers = [-10, -1, 12];
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i]) > 0) {
+        numberAboveZero = numbers[i];
+    }
+}
 ```
 
-##### type inference
+#### type inference
 
 ```
-# variable declared on same line, typescript guesses the type
+# variable declared on same line, typescript infers the type
 
 const apples = 5;
 
