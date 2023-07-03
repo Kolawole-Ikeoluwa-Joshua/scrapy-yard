@@ -168,11 +168,11 @@ const add = (a: number, b: number) => {
     return a + b;
 };
 
-
 // type annotations for arguments & output
 const subtract = (a: number, b: number): number => {
     return a - b;
 };
+
 
 
 // annotations for anonymous functions
@@ -186,8 +186,6 @@ const multiply = function(a: number, b: number): number {
 const logger = (message: string): void => {
     console.log(message);
 };
-
-
 
 // when we never want to return a value - rare case
 // const throwError = (message: string): never => {
@@ -205,7 +203,7 @@ const throwError = (message: string): string => {
 
 
 
-// destructing with annotations
+// destructuring with annotations
 const todaysWeather = {
     date: new Date(),
     weather: 'sunny'
@@ -224,4 +222,29 @@ const logWeather = ({
 };
 
 logWeather(todaysWeather);
+```
+
+### Type Annotations and Inference - Objects
+
+```
+// annotations around objects
+// object with function declaration
+const profile = {
+    name: 'alex',
+    age: 20,
+    coords: {
+        lat: 0,
+        lng: 15
+    },
+    setAge(age: number): void {
+        this.age = age;
+    }
+};
+
+// destructuring and annotations
+const { age }: { age: number } = profile;
+
+const {
+  coords: { lat, lng }
+}: { coords: { lat: number, lng: number } } = profile;
 ```
