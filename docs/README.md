@@ -168,20 +168,26 @@ const add = (a: number, b: number) => {
     return a + b;
 };
 
+
 // type annotations for arguments & output
 const subtract = (a: number, b: number): number => {
     return a - b;
 };
+
 
 // annotations for anonymous functions
 const multiply = function(a: number, b: number): number {
     return a * b;
 };
 
+
+
 // void and never
 const logger = (message: string): void => {
     console.log(message);
 };
+
+
 
 // when we never want to return a value - rare case
 // const throwError = (message: string): never => {
@@ -196,6 +202,8 @@ const throwError = (message: string): string => {
 
     return message;
 };
+
+
 
 // destructing with annotations
 const todaysWeather = {
