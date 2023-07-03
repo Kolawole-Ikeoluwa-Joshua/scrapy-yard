@@ -42,7 +42,16 @@ axios.get(url).then(response => {
 
 ```
 
-### Type Annotations and Inference
+### Type Annotations and Inference - Variables
+
+#### type inference
+
+```
+# variable declared on same line, typescript infers the type
+
+const apples = 5;
+
+```
 
 #### type annotations
 
@@ -72,14 +81,16 @@ let point: { x: number; y: number } = {
     y: 20
 };
 
-// annotations around functions
+// annotations around variables in functions
 const logNumber: (i: number) => void = (i: number) => {
     console.log(i);
 };
 ```
+
 ##### when to use annotations
 
-* When a function returns the 'any' type
+- When a function returns the 'any' type
+
 ```
 const json = '{"x": 10, "y": 20}';
 const coordinates = JSON.parse(json); //JSON.parse() function returns any
@@ -90,7 +101,9 @@ const json = '{"x": 10, "y": 20}';
 const coordinates: { x: number, y: number } = JSON.parse(json);
 console.log(coordinates);
 ```
-* When we declare a variable on one line and initialize it later
+
+- When we declare a variable on one line and initialize it later
+
 ```
 let words = ['red', 'green', 'blue'];
 let foundWord;
@@ -121,7 +134,9 @@ for (let i = 0; i < words.length; i++) {
     }
 }
 ```
-* Variables whose type cannot be inferred correctly
+
+- Variables whose type cannot be inferred correctly
+
 ```
 let numbers = [-10, -1, 12];
 let numberAboveZero = false;
@@ -143,11 +158,62 @@ for (let i = 0; i < numbers.length; i++) {
 }
 ```
 
-#### type inference
+### Type Annotations and Inference - Functions
 
 ```
-# variable declared on same line, typescript infers the type
+// simple type annotation
+// type annotation on arguments
+// type inference on return value/output
+const add = (a: number, b: number) => {
+    return a + b;
+};
 
-const apples = 5;
+// type annotations for arguments & output
+const subtract = (a: number, b: number): number => {
+    return a - b;
+};
 
+// annotations for anonymous functions
+const multiply = function(a: number, b: number): number {
+    return a * b;
+};
+
+// void and never
+const logger = (message: string): void => {
+    console.log(message);
+};
+
+// when we never want to return a value - rare case
+// const throwError = (message: string): never => {
+//     throw new Error(message);
+// }
+
+// commonly used
+const throwError = (message: string): string => {
+    if (!message) {
+        throw new Error(message);
+    }
+
+    return message;
+};
+
+// destructing with annotations
+const todaysWeather = {
+    date: new Date(),
+    weather: 'sunny'
+};
+
+// retrive attributes you need from object
+const logWeather = ({
+    date,
+    weather
+}: {
+    date: Date,
+    weather: string;
+}): void => {
+    console.log(date);
+    console.log(weather);
+};
+
+logWeather(todaysWeather);
 ```
