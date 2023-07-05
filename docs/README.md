@@ -42,7 +42,7 @@ axios.get(url).then(response => {
 
 ```
 
-### Type Annotations and Inference - Variables
+### Type Annotations and Inference
 
 #### type inference
 
@@ -87,7 +87,7 @@ const logNumber: (i: number) => void = (i: number) => {
 };
 ```
 
-##### when to use annotations
+### when to use annotations
 
 - When a function returns the 'any' type
 
@@ -157,10 +157,11 @@ for (let i = 0; i < numbers.length; i++) {
     }
 }
 ```
+
 ### More TypeScript
 
-* [Functions](./functions.ts)
-* [Objects](./objects.ts)
-* [Arrays](./arrays.ts)
-* [Tuples](./tuples.ts)
-* [Interfaces](./interfaces.ts)
+- [Functions](./functions.ts)
+- [Objects](./objects.ts)
+- [Arrays](./arrays.ts)
+- [Tuples](./tuples.ts)
+- [Interfaces](./interfaces.ts)
