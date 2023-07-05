@@ -300,3 +300,4 @@ const tea: Drink = ['brown', false, 0];
 
 const carSpecs: [number, number] = [400, 3354];
 ```
+* [Interfaces](./interfaces.ts)
