@@ -165,3 +165,4 @@ for (let i = 0; i < numbers.length; i++) {
 - [Arrays](./arrays.ts)
 - [Tuples](./tuples.ts)
 - [Interfaces](./interfaces.ts)
+- [Classes](./classes.ts)
