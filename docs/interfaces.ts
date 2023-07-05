@@ -1,14 +1,25 @@
 // Interfaces
-// writing reusable code using typescript interfaces
+/*
+Writing reusablecode using typescript interfaces:
 
-// we can use a single interface to describe different properties of different objects
+1. CREATE FUNCTIONS THAT ACCEPT ARGUMENTS THAT ARE TYPED WITH INTERFACES
+2. OBJECTS/CLASSES CAN DECIDE TO IMPLEMENT A GIVEN INTERFACE TO WORK
+WITH A FUNCTION
+
+*/
 
 //singe interface
 interface Reportable {
     summary(): string;
 }
 
-// two different objects
+// function takes interface type as an argument
+const printSummary = (item: Reportable): void => {
+    console.log(item.summary());
+
+};
+
+// we can use a single interface to describe different properties of different objects
 const oldCivic = {
     name: 'civic',
     year: new Date(),
@@ -28,10 +39,5 @@ const drink = {
 };
 
 // different objects can interact with different functions
-const printSummary = (item: Reportable): void => {
-    console.log(item.summary());
-
-};
-
 printSummary(oldCivic);
 printSummary(drink);
