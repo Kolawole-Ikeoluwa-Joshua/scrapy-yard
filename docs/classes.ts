@@ -13,7 +13,13 @@ const vehicle = new Vehicle('orange');
 console.log(vehicle.color);
 
 // basic inheritance
-/*class Car extends Vehicle {
+
+// fields with inheritance
+class Car extends Vehicle {
+
+    constructor(public wheels: number, color: string) {
+        super(color);
+    }
     private drive(): void {
         console.log('vroom');
     }
@@ -25,6 +31,5 @@ console.log(vehicle.color);
 
 }
 
-const car = new Car();
+const car = new Car(4, 'red');
 car.startDrivingProcess();
-*/
