@@ -1,12 +1,19 @@
 // classes
 class Vehicle {
+    // fields in classes
+    constructor(public color: string) {
+    }
+
     protected honk(): void {
         console.log('beep');
     }
 }
 
+const vehicle = new Vehicle('orange');
+console.log(vehicle.color);
+
 // basic inheritance
-class Car extends Vehicle {
+/*class Car extends Vehicle {
     private drive(): void {
         console.log('vroom');
     }
@@ -20,3 +27,4 @@ class Car extends Vehicle {
 
 const car = new Car();
 car.startDrivingProcess();
+*/
